@@ -191,7 +191,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
   <div class="sec-head"><h2>소개</h2><p>산업안전 도메인에서 "감사받는 문서"를 생성하는 AI를 개발했습니다.</p></div>
   <div class="about">
     <div>
-      <p>산업안전 문서를 자동 생성하는 AI 에이전트와 현장용 앱 2종을 1인으로 설계·구현했습니다.<br>위험성평가서·TBM 일지·작업계획서는 감사 대상 문서라 LLM이 조문을 지어내거나 곱셈을 틀리면 문서 전체가 무효가 됩니다.<br>그래서 법령 인용 같은 초안은 LLM이 쓰고 산수와 조문 대조, 논리 검증은 코드가 하도록 역할을 나눴습니다.</p>
+      <p>산업안전 문서를 자동 생성하는 AI 에이전트와 현장용 앱 2종을 설계·구현했습니다.<br>위험성평가서·TBM 일지·작업계획서는 감사 대상 문서라 LLM이 조문을 지어내거나 곱셈을 틀리면 문서 전체가 무효가 됩니다.<br>그래서 법령 인용 같은 초안은 LLM이 쓰고 산수와 조문 대조, 논리 검증은 코드가 하도록 역할을 나눴습니다.</p>
       <ul style="margin-top:14px">
         <li>코드를 치기 전에 마스터 스펙부터 씁니다. <b>절대 원칙·스키마·Phase 계획·수용 기준(AC)</b>을 이 문서에 담습니다.<br>세 저장소는 Claude Code가 Phase마다 AC 증거를 보고하면 승인하는 방식으로 운영했습니다.</li>
         <li>현장 측정 보고서는 원자료 929프레임을 전량 재집계해 썼습니다.<br>"전송 19/19"를 100%라고 쓰지 않는 이유도 같이 적어 두었습니다.</li>
@@ -236,7 +236,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
       <div class="text">
         <span class="eyebrow">01 · L2 문서 에이전트 · 에어갭 온프레미스</span>
         <h3>VIGENT L2 "Scribe" — 안전문서 3종 자동 생성·검증</h3>
-        <div class="meta"><span>기간 <b>2026.08 ~ 09 (5주)</b></span><span>인원 <b>1인</b></span><span>역할 <b>설계·구현·테스트</b></span><span>기여도 <b>100%</b></span></div>
+        <div class="meta"><span>기간 <b>2026.08 ~ 09 (5주)</b></span><span>역할 <b>설계·구현·테스트</b></span></div>
         <div class="par">
           <div><b>문제</b><p>감사 대상 안전문서를 외부 API 없는 단일 GPU 환경에서, LLM의 조문 환각과 산수 오류 없이 생성해야 했습니다.</p></div>
           <div><b>접근</b><p>위험성 계산과 14개 법령 화이트리스트 대조, 논리 검증은 Pydantic과 순수 코드 몫입니다.<br>LLM은 법령 인용과 항목 초안을 씁니다.<br>채점기는 생성기보다 앞서 작성했습니다.</p></div>
@@ -257,7 +257,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
       <div class="text">
         <span class="eyebrow">02 · 영상 판독 · VLM 신뢰성</span>
         <h3>오독 방지 프로토콜 — "판정 불가"를 결론으로 허용</h3>
-        <div class="meta"><span>기간 <b>2026.08 (2주)</b></span><span>인원 <b>1인</b></span><span>역할 <b>프로토콜 설계·검증 코드</b></span><span>기여도 <b>100%</b></span></div>
+        <div class="meta"><span>기간 <b>2026.08 (2주)</b></span><span>역할 <b>프로토콜 설계·검증 코드</b></span></div>
         <div class="par">
           <div><b>문제</b><p>균등 샘플링한 프레임을 VLM에 넣으면 순간 사건을 놓치고 그럴듯한 시나리오로 메꿉니다.<br>실제로 코일 풀림을 '전도'로 읽은 오독이 있었습니다.</p></div>
           <div><b>접근</b><p>변화 구간만 0.2초로 재추출하는 2-pass 샘플링, 결론을 "확정 / 판정 불가" 둘로 제한하는 판독 규칙, '직접 관찰' 태그 없이 쓴 인명 피해 어휘를 코드가 차단하는 게이트.</p></div>
@@ -280,7 +280,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
       <div class="text">
         <span class="eyebrow">03 · VLM 파이프라인 + 모바일 앱 (PWA)</span>
         <h3>vigent_vlm — 현장 사진 한 건에서 문서 4종, 폰에서 바로</h3>
-        <div class="meta"><span>기간 <b>2026.08 ~ 09 (6주)</b></span><span>인원 <b>1인</b></span><span>역할 <b>파이프라인·앱 서버·PWA</b></span><span>기여도 <b>100%</b></span></div>
+        <div class="meta"><span>기간 <b>2026.08 ~ 09 (6주)</b></span><span>역할 <b>파이프라인·앱 서버·PWA</b></span></div>
         <div class="par">
           <div><b>문제</b><p>실제 현장 사진으로 문서 품질을 빠르게 검증할 필요가 있었습니다.<br>현장에서는 PC 없이 폰으로 찍어 올려야 했습니다.</p></div>
           <div><b>접근</b><p>VLM이 판독과 법령 인용 초안을 쓰면 코드가 안전장치를 재판독하고 법령 API 대조와 등급 계산을 합니다.<br>문서 4종은 xlsx/pdf로 나갑니다.<br>FastAPI가 이 파이프라인을 그대로 호출하고 PWA는 그 위에 올렸습니다.</p></div>
@@ -304,7 +304,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
       <div class="text">
         <span class="eyebrow">04 · 현장 실측 · 검증 보고</span>
         <h3>L1 현장 테스트 — 지게차 7장면, 원자료 전량 재집계</h3>
-        <div class="meta"><span>기간 <b>2026.08 측정 · 09 재검증</b></span><span>인원 <b>1인</b></span><span>역할 <b>측정·재집계·보고서</b></span><span>기여도 <b>100%</b></span></div>
+        <div class="meta"><span>기간 <b>2026.08 측정 · 09 재검증</b></span><span>역할 <b>측정·재집계·보고서</b></span></div>
         <div class="par">
           <div><b>문제</b><p>54분 촬영 결과를 인용 가능한 수치로 정리하는 것이 과제였습니다.<br>그런데 초판에는 원자료로 재현되지 않는 수치가 섞여 있었습니다.</p></div>
           <div><b>접근</b><p>원자료 929줄을 전량 재집계해 재현되지 않는 2건을 삭제·정정했습니다.<br>전송 19/19는 표본이 작아(95% 신뢰구간 하한 83%) "100%"로 쓰지 않았습니다.</p></div>
@@ -328,7 +328,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
       <div class="text">
         <span class="eyebrow">05 · 지원금 조회 앱 (PWA) · 운영 중</span>
         <h3>VIGENT Subsidy — 제조업 정부지원금·정책자금 조회</h3>
-        <div class="meta"><span>기간 <b>2026.09 ~ 운영 중</b></span><span>인원 <b>1인</b></span><span>역할 <b>스펙·구현·운영</b></span><span>기여도 <b>100%</b></span></div>
+        <div class="meta"><span>기간 <b>2026.09 ~ 운영 중</b></span><span>역할 <b>스펙·구현·운영</b></span></div>
         <div class="par">
           <div><b>문제</b><p>조건만 넣으면 받을 수 있는 지원금·정책자금을 보여주되 틀린 정보와 금융소비자보호법상 "대출 중개" 해석을 피해야 했습니다.</p></div>
           <div><b>접근</b><p>공식 출처 수집 → LLM 구조화 추출 → 관리자 승인분만 노출.<br>자격 판정은 룰 엔진, 대출 탭은 등급 없이 대조표만, 추천·보장 같은 문구는 테스트로 차단.</p></div>
