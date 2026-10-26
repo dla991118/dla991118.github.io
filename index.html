@@ -27,6 +27,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.25;margin:0;text-wrap:balance;
 h2{font-size:1.6rem;font-weight:700}
 h3{font-size:1.15rem;font-weight:600}
 p{margin:0}
+p br,li br,dd br{content:"";display:block;margin-top:.15em}
 .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
 .muted{color:var(--muted)}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
@@ -190,10 +191,10 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
   <div class="sec-head"><h2>소개</h2><p>산업안전 도메인에서 "감사받는 문서"를 생성하는 AI를 개발했습니다.</p></div>
   <div class="about">
     <div>
-      <p>산업안전 문서를 자동 생성하는 AI 에이전트와 현장용 앱 2종을 1인으로 설계·구현했습니다. 위험성평가서·TBM 일지·작업계획서는 감사 대상 문서라 LLM이 조문을 지어내거나 곱셈을 틀리면 문서 전체가 무효가 됩니다. 그래서 법령 인용 같은 초안은 LLM이 쓰고 산수와 조문 대조, 논리 검증은 코드가 하도록 역할을 나눴습니다. <b>에어갭 온프레미스 문서 에이전트(L2)</b>는 이 구조로 설계돼 있습니다. VLM 판독 도구와 현장용 모바일 앱, 사업주용 지원금 조회 앱도 같은 원칙으로 구현했습니다.</p>
+      <p>산업안전 문서를 자동 생성하는 AI 에이전트와 현장용 앱 2종을 1인으로 설계·구현했습니다.<br>위험성평가서·TBM 일지·작업계획서는 감사 대상 문서라 LLM이 조문을 지어내거나 곱셈을 틀리면 문서 전체가 무효가 됩니다.<br>그래서 법령 인용 같은 초안은 LLM이 쓰고 산수와 조문 대조, 논리 검증은 코드가 하도록 역할을 나눴습니다.</p>
       <ul style="margin-top:14px">
-        <li>코드를 치기 전에 마스터 스펙부터 씁니다. <b>절대 원칙·스키마·Phase 계획·수용 기준(AC)</b>을 이 문서에 담습니다. 세 저장소는 Claude Code가 Phase마다 AC 증거를 보고하면 승인하는 방식으로 운영했습니다.</li>
-        <li>현장 측정 보고서는 원자료 929프레임을 전량 재집계해 썼습니다. "전송 19/19"를 100%라고 쓰지 않는 이유도 같이 적어 두었습니다.</li>
+        <li>코드를 치기 전에 마스터 스펙부터 씁니다. <b>절대 원칙·스키마·Phase 계획·수용 기준(AC)</b>을 이 문서에 담습니다.<br>세 저장소는 Claude Code가 Phase마다 AC 증거를 보고하면 승인하는 방식으로 운영했습니다.</li>
+        <li>현장 측정 보고서는 원자료 929프레임을 전량 재집계해 썼습니다.<br>"전송 19/19"를 100%라고 쓰지 않는 이유도 같이 적어 두었습니다.</li>
         <li>결정은 ADR로 남기고 일일 작업 일지는 Claude Code 예약 작업과 MCP로 노션에 자동 기록했습니다.</li>
       </ul>
     </div>
@@ -214,7 +215,7 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <div class="sec-head"><h2>프로젝트</h2><p>한 번에 한 건씩 넘겨 보세요. 문제 → 접근 → 트러블슈팅 → 결과 순서입니다.</p></div>
+  <div class="sec-head"><h2>프로젝트</h2><p>한 번에 한 건씩 넘겨 보세요.<br>문제 → 접근 → 트러블슈팅 → 결과 순서입니다.</p></div>
   <div class="pager-bar">
     <div class="tabs" role="tablist" aria-label="프로젝트 선택">
       <button class="tab" role="tab" type="button" data-i="0" aria-selected="true">01 L2 문서 에이전트</button>
@@ -238,9 +239,9 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
         <div class="meta"><span>기간 <b>2026.08 ~ 09 (5주)</b></span><span>인원 <b>1인</b></span><span>역할 <b>설계·구현·테스트</b></span><span>기여도 <b>100%</b></span></div>
         <div class="par">
           <div><b>문제</b><p>감사 대상 안전문서를 외부 API 없는 단일 GPU 환경에서, LLM의 조문 환각과 산수 오류 없이 생성해야 했습니다.</p></div>
-          <div><b>접근</b><p>위험성 계산과 14개 법령 화이트리스트 대조, 논리 검증은 Pydantic과 순수 코드 몫입니다. LLM은 법령 인용과 항목 초안을 씁니다. 채점기는 생성기보다 앞서 작성했습니다.</p></div>
+          <div><b>접근</b><p>위험성 계산과 14개 법령 화이트리스트 대조, 논리 검증은 Pydantic과 순수 코드 몫입니다.<br>LLM은 법령 인용과 항목 초안을 씁니다.<br>채점기는 생성기보다 앞서 작성했습니다.</p></div>
           <div class="t"><b>트러블슈팅</b><p>임베딩 라이브러리가 끌고 오는 훈련 스택이 Windows 정책에서 DLL 차단 → transformers로 임베더를 직접 구현하고 인덱스를 사전 계산해 번들.</p></div>
-          <div class="r"><b>결과</b><p>현장 양식 그대로 docx/xlsx 출력(작업계획서 13종), 자체 MCP 서버와 FastAPI로 노출. 테스트 244건.</p></div>
+          <div class="r"><b>결과</b><p>현장 양식 그대로 docx/xlsx 출력(작업계획서 13종), 자체 MCP 서버와 FastAPI로 노출.<br>테스트 244건.</p></div>
         </div>
         <div class="metrics"><span class="metric"><span class="num">244</span> 테스트</span><span class="metric"><span class="num">1,800</span> 조문 스냅샷</span><span class="metric"><span class="num">13</span>종 양식</span></div>
         <div><span class="tag">Python</span><span class="tag">Pydantic v2</span><span class="tag">LangGraph</span><span class="tag">BGE-m3</span><span class="tag">FastAPI</span><span class="tag">MCP</span></div>
@@ -258,9 +259,9 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
         <h3>오독 방지 프로토콜 — "판정 불가"를 결론으로 허용</h3>
         <div class="meta"><span>기간 <b>2026.08 (2주)</b></span><span>인원 <b>1인</b></span><span>역할 <b>프로토콜 설계·검증 코드</b></span><span>기여도 <b>100%</b></span></div>
         <div class="par">
-          <div><b>문제</b><p>균등 샘플링한 프레임을 VLM에 넣으면 순간 사건을 놓치고 그럴듯한 시나리오로 메꿉니다. 실제로 코일 풀림을 '전도'로 읽은 오독이 있었습니다.</p></div>
+          <div><b>문제</b><p>균등 샘플링한 프레임을 VLM에 넣으면 순간 사건을 놓치고 그럴듯한 시나리오로 메꿉니다.<br>실제로 코일 풀림을 '전도'로 읽은 오독이 있었습니다.</p></div>
           <div><b>접근</b><p>변화 구간만 0.2초로 재추출하는 2-pass 샘플링, 결론을 "확정 / 판정 불가" 둘로 제한하는 판독 규칙, '직접 관찰' 태그 없이 쓴 인명 피해 어휘를 코드가 차단하는 게이트.</p></div>
-          <div class="r"><b>결과</b><p>오독 사례 8건을 사례집 → 규칙 → 코드로 승격하는 학습 루프. 이후 현장 보고서와 앱의 "(재확인 필요)" 표기로 이어졌습니다.</p></div>
+          <div class="r"><b>결과</b><p>오독 사례 8건을 사례집 → 규칙 → 코드로 승격하는 학습 루프.<br>이후 현장 보고서와 앱의 "(재확인 필요)" 표기로 이어졌습니다.</p></div>
         </div>
         <div class="metrics"><span class="metric"><span class="num">8</span> 오독 사례</span><span class="metric"><span class="num">2</span>종 기계 검증</span></div>
         <div><span class="tag">OpenCV</span><span class="tag">numpy</span><span class="tag">프롬프트 설계</span></div>
@@ -281,10 +282,10 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
         <h3>vigent_vlm — 현장 사진 한 건에서 문서 4종, 폰에서 바로</h3>
         <div class="meta"><span>기간 <b>2026.08 ~ 09 (6주)</b></span><span>인원 <b>1인</b></span><span>역할 <b>파이프라인·앱 서버·PWA</b></span><span>기여도 <b>100%</b></span></div>
         <div class="par">
-          <div><b>문제</b><p>실제 현장 사진으로 문서 품질을 빠르게 검증할 필요가 있었습니다. 현장에서는 PC 없이 폰으로 찍어 올려야 했습니다.</p></div>
-          <div><b>접근</b><p>VLM이 판독과 법령 인용 초안을 쓰면 코드가 안전장치를 재판독하고 법령 API 대조와 등급 계산을 합니다. 문서 4종은 xlsx/pdf로 나갑니다. FastAPI가 이 파이프라인을 그대로 호출하고 PWA는 그 위에 올렸습니다.</p></div>
+          <div><b>문제</b><p>실제 현장 사진으로 문서 품질을 빠르게 검증할 필요가 있었습니다.<br>현장에서는 PC 없이 폰으로 찍어 올려야 했습니다.</p></div>
+          <div><b>접근</b><p>VLM이 판독과 법령 인용 초안을 쓰면 코드가 안전장치를 재판독하고 법령 API 대조와 등급 계산을 합니다.<br>문서 4종은 xlsx/pdf로 나갑니다.<br>FastAPI가 이 파이프라인을 그대로 호출하고 PWA는 그 위에 올렸습니다.</p></div>
           <div class="t"><b>트러블슈팅</b><p>iOS 홈 화면 앱에서 blob PDF가 빈 화면 → HMAC 서명 링크(30분 만료)로 교체.</p></div>
-          <div class="r"><b>결과</b><p>사진 6장 → 4종 문서 약 6분. Cloudflare Tunnel로 외부 접속, 테스트 61건.</p></div>
+          <div class="r"><b>결과</b><p>사진 6장 → 4종 문서 약 6분.<br>Cloudflare Tunnel로 외부 접속, 테스트 61건.</p></div>
         </div>
         <div class="metrics"><span class="metric"><span class="num">4</span>종 문서</span><span class="metric"><span class="num">61</span> 테스트</span><span class="metric"><span class="num">6</span>분 / 6장</span></div>
         <div><span class="tag">Qwen VLM</span><span class="tag">FastAPI</span><span class="tag">PWA</span><span class="tag">Playwright</span><span class="tag">Cloudflare Tunnel</span></div>
@@ -305,14 +306,14 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
         <h3>L1 현장 테스트 — 지게차 7장면, 원자료 전량 재집계</h3>
         <div class="meta"><span>기간 <b>2026.08 측정 · 09 재검증</b></span><span>인원 <b>1인</b></span><span>역할 <b>측정·재집계·보고서</b></span><span>기여도 <b>100%</b></span></div>
         <div class="par">
-          <div><b>문제</b><p>54분 촬영 결과를 인용 가능한 수치로 정리하는 것이 과제였습니다. 그런데 초판에는 원자료로 재현되지 않는 수치가 섞여 있었습니다.</p></div>
-          <div><b>접근</b><p>원자료 929줄을 전량 재집계해 재현되지 않는 2건을 삭제·정정했습니다. 전송 19/19는 표본이 작아(95% 신뢰구간 하한 83%) "100%"로 쓰지 않았습니다.</p></div>
+          <div><b>문제</b><p>54분 촬영 결과를 인용 가능한 수치로 정리하는 것이 과제였습니다.<br>그런데 초판에는 원자료로 재현되지 않는 수치가 섞여 있었습니다.</p></div>
+          <div><b>접근</b><p>원자료 929줄을 전량 재집계해 재현되지 않는 2건을 삭제·정정했습니다.<br>전송 19/19는 표본이 작아(95% 신뢰구간 하한 83%) "100%"로 쓰지 않았습니다.</p></div>
           <div class="t"><b>트러블슈팅</b><p>위험구역이 발화하지 않은 원인은 사람이 설 수 없는 곳에 그린 구역(알고리즘 문제 아님) → 재작도 후 정상, 절차에 확인 단계 추가.</p></div>
-          <div class="r"><b>결과</b><p>지게차 앞 지면의 사람이 운전자로 오인되는 경로(10/210)를 찾았습니다. 이를 1순위 과제로 올리고 발끝 높이 기준을 제안해 16프레임 전부 올바르게 분류했습니다.</p></div>
+          <div class="r"><b>결과</b><p>지게차 앞 지면의 사람이 운전자로 오인되는 경로(10/210)를 찾았습니다.<br>이를 1순위 과제로 올리고 발끝 높이 기준을 제안해 16프레임 전부 올바르게 분류했습니다.</p></div>
         </div>
         <div class="metrics"><span class="metric">검출률 <span class="num">97.7%</span></span><span class="metric">거짓 경보 <span class="num">0</span>/200</span><span class="metric">누락 위험 <span class="num">4.8%</span></span></div>
         <div><span class="tag">RF-DETR · YOLO</span><span class="tag">원자료 재집계</span><span class="tag">신뢰구간</span></div>
-        <p class="limit"><b>한계</b> 카메라 1대·주간·단일 세션. mAP·IoU는 산출 불가.</p>
+        <p class="limit"><b>한계</b> 카메라 1대·주간·단일 세션.<br>mAP·IoU는 산출 불가.</p>
       </div>
       <div class="media">
         <div class="row">
@@ -330,9 +331,9 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
         <div class="meta"><span>기간 <b>2026.09 ~ 운영 중</b></span><span>인원 <b>1인</b></span><span>역할 <b>스펙·구현·운영</b></span><span>기여도 <b>100%</b></span></div>
         <div class="par">
           <div><b>문제</b><p>조건만 넣으면 받을 수 있는 지원금·정책자금을 보여주되 틀린 정보와 금융소비자보호법상 "대출 중개" 해석을 피해야 했습니다.</p></div>
-          <div><b>접근</b><p>공식 출처 수집 → LLM 구조화 추출 → 관리자 승인분만 노출. 자격 판정은 룰 엔진, 대출 탭은 등급 없이 대조표만, 추천·보장 같은 문구는 테스트로 차단.</p></div>
+          <div><b>접근</b><p>공식 출처 수집 → LLM 구조화 추출 → 관리자 승인분만 노출.<br>자격 판정은 룰 엔진, 대출 탭은 등급 없이 대조표만, 추천·보장 같은 문구는 테스트로 차단.</p></div>
           <div class="t"><b>트러블슈팅</b><p>검증 실패한 공고가 자리표시자로만 저장돼 관리자가 처음부터 다시 적던 문제 → 추출값을 보존해 이어서 수정하게 변경.</p></div>
-          <div class="r"><b>결과</b><p>프롬프트 확정 후 P0~P5를 하루에 구현, 테스트 149건. 노트북 서버 + Cloudflare Tunnel로 공개해 일일 수집 배치 운영 중.</p></div>
+          <div class="r"><b>결과</b><p>프롬프트 확정 후 P0~P5를 하루에 구현, 테스트 149건.<br>노트북 서버 + Cloudflare Tunnel로 공개해 일일 수집 배치 운영 중.</p></div>
         </div>
         <div class="metrics"><span class="metric"><span class="num">149</span> 테스트</span><span class="metric">레코드 <span class="num">45</span></span><span class="metric">P0~P5 <span class="num">1</span>일</span></div>
         <div><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">Anthropic API</span><span class="tag">PWA</span><span class="tag">AES-GCM</span></div>
@@ -360,12 +361,12 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
 </div></section>
 
 <section id="way"><div class="wrap">
-  <div class="sec-head"><h2>업무수행 방향성</h2><p>AI가 코드를 빨리 쓰는 만큼 틀린 코드도 빨리 씁니다. 그래서 규칙과 검증 장치를 먼저 갖춥니다.</p></div>
+  <div class="sec-head"><h2>업무수행 방향성</h2><p>AI가 코드를 빨리 쓰는 만큼 틀린 코드도 빨리 씁니다.<br>그래서 규칙과 검증 장치를 먼저 갖춥니다.</p></div>
   <div class="way">
-    <div class="item"><h3>프롬프트를 제품 스펙으로</h3><p>마스터 스펙부터 쓰고 여기에 프로젝트 정의, 절대 원칙("위반 시 커밋 거부"), 스키마, Phase 계획과 수용 기준(AC)을 적어 둡니다. 새 환경에서도 이 문서만으로 재구축할 수 있어야 하고 실제로 그렇게 재구축했습니다.</p><div class="quote">Phase마다 ① 한 일 ② AC 검증 결과 ③ diff 요약 ④ 남은 위험.
+    <div class="item"><h3>프롬프트를 제품 스펙으로</h3><p>마스터 스펙부터 쓰고 여기에 프로젝트 정의, 절대 원칙("위반 시 커밋 거부"), 스키마, Phase 계획과 수용 기준(AC)을 적어 둡니다.<br>새 환경에서도 이 문서만으로 재구축할 수 있어야 하고 실제로 그렇게 재구축했습니다.</p><div class="quote">Phase마다 ① 한 일 ② AC 검증 결과 ③ diff 요약 ④ 남은 위험.
 실패한 테스트·건너뛴 단계는 숨기지 않는다.</div></div>
-    <div class="item"><h3>오독을 학습 루프로</h3><p>판독 오류가 나면 사례집에 등재하고 규칙으로 승격한 뒤, 가능하면 코드 검증으로 승격합니다. 사례는 검증 트리거이지 판정 근거가 아닙니다. 근거가 없는 결정은 유보하고 대가 항목이 있는 ADR로 남깁니다.</p></div>
-    <div class="item"><h3>기록 자동화</h3><p>일일 작업 일지는 Claude Code 예약 작업이 맡습니다. 매일 아침 커밋과 산출물, 세션 기록을 수집해 노션 DB에 올립니다. 실명·사업장명·키는 어떤 기록에도 남기지 않습니다.</p></div>
+    <div class="item"><h3>오독을 학습 루프로</h3><p>판독 오류가 나면 사례집에 등재하고 규칙으로 승격한 뒤, 가능하면 코드 검증으로 승격합니다.<br>사례는 검증 트리거이지 판정 근거가 아닙니다.<br>근거가 없는 결정은 유보하고 대가 항목이 있는 ADR로 남깁니다.</p></div>
+    <div class="item"><h3>기록 자동화</h3><p>일일 작업 일지는 Claude Code 예약 작업이 맡습니다.<br>매일 아침 커밋과 산출물, 세션 기록을 수집해 노션 DB에 올립니다.<br>실명·사업장명·키는 어떤 기록에도 남기지 않습니다.</p></div>
   </div>
 </div></section>
 
