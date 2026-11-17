@@ -125,7 +125,8 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .way h3{font-size:1rem;margin-bottom:8px}
 .way p{font-size:.93rem}
 .way .quote{margin-top:10px}
-.lessons{max-width:46em}
+.lessons{max-width:46em;margin-top:14px}
+.card.solo .body{grid-template-columns:1fr}
 .lessons p{font-size:1rem}
 /* contact */
 .contact{max-width:520px}
@@ -154,14 +155,19 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
   .card .body{padding:18px 16px}
 }
 @media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+@page{size:A4 landscape;margin:0}
 @media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .nav,.ctas,.copybtn,.toast,.pager-bar,.scrollhint{display:none!important}
-  body{background:#fff;color:#000}
-  .cover{min-height:auto;background:#fff;color:#000;border-bottom:1px solid #999}
+  .wrap{max-width:none;padding-inline:44px}
+  .cover{min-height:auto}
+  .cover .wrap{padding-block:30px 22px}
+  section{padding-block:24px}
   .card[hidden]{display:block!important}
-  .card{break-inside:avoid;box-shadow:none;margin-bottom:18px}
+  #projects,#skills{break-before:page}
+  .card{break-inside:avoid;margin-bottom:18px}
+  .card+.card{break-before:page}
   .skill,.way .item,.box{break-inside:avoid}
-  section{padding-block:20px}
   a{text-decoration:none;color:inherit}
 }
 </style>
@@ -176,7 +182,6 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
     <li><a href="#projects"><span class="ko">프로젝트</span><span class="en">Projects</span></a></li>
     <li class="hide-en-s"><a href="#skills"><span class="ko">기술</span><span class="en">Skills</span></a></li>
     <li class="hide-s"><a href="#way"><span class="ko">업무수행 방향성</span><span class="en">Work Approach</span></a></li>
-    <li class="hide-s"><a href="#lessons"><span class="ko">느낀 점</span><span class="en">Takeaways</span></a></li>
     <li><button class="langbtn" id="langbtn" type="button" aria-label="Switch language">EN</button></li>
     <li><a class="cta" href="#contact"><span class="ko">연락</span><span class="en">Contact</span></a></li>
   </ul>
@@ -237,10 +242,11 @@ footer{padding-block:28px 40px;font-size:.8rem;color:var(--muted);border-top:1px
       <button class="tab" role="tab" type="button" data-i="2"><span class="ko">03 VLM + 모바일 앱</span><span class="en">03 VLM + mobile app</span></button>
       <button class="tab" role="tab" type="button" data-i="3"><span class="ko">04 현장 테스트</span><span class="en">04 Field test</span></button>
       <button class="tab" role="tab" type="button" data-i="4"><span class="ko">05 지원금 앱</span><span class="en">05 Subsidy app</span></button>
+      <button class="tab" role="tab" type="button" data-i="5"><span class="ko">06 느낀 점</span><span class="en">06 Takeaways</span></button>
     </div>
     <div class="pgnav">
       <button class="pgbtn" type="button" id="prev" aria-label="이전 프로젝트">‹</button>
-      <span class="count" id="count">1 / 5</span>
+      <span class="count" id="count">1 / 6</span>
       <button class="pgbtn" type="button" id="next" aria-label="다음 프로젝트">›</button>
     </div>
   </div>
@@ -359,6 +365,14 @@ One unfounded finding is worse than ten "cannot determine" results.</span></div>
       </div>
     </div></article>
 
+    <article class="card solo" data-page="5" hidden><div class="body">
+      <div class="text">
+        <span class="eyebrow"><span class="ko">06 · 느낀 점</span><span class="en">06 · Takeaways</span></span>
+        <h3><span class="ko">이번 프로젝트에서 느낀 점</span><span class="en">What I took away from this project</span></h3>
+        <div class="lessons"><p><span class="ko">이번 프로젝트에서 가장 크게 느낀 것은 AI를 쓸 때 정확성을 높이는 데 많은 집중을 쏟아야 한다는 점입니다.<br>AI는 초안을 빠르게 내놓지만 조문을 잘못 인용하거나 영상에 없는 사고를 그럴듯하게 서술하기도 했습니다.<br>결과물을 그대로 믿을 수 없었기 때문에 기능을 만드는 시간보다 결과를 검증하는 장치를 만드는 시간이 더 길었습니다.<br>법령 대조, 판독 규칙, 평가 하네스처럼 정확성을 확인하는 과정이 프로젝트의 중심이 됐습니다.<br>앞으로도 AI를 활용하는 일에서는 출력의 정확성을 먼저 확인하는 구조부터 갖추겠습니다.</span><span class="en">What I felt most strongly in this project is that using AI takes a great deal of focus on improving accuracy.<br>AI produces drafts quickly, but it also cited the wrong statute and gave convincing descriptions of accidents that were not in the footage.<br>Because the output could not be trusted as it was, building the checks took longer than building the features.<br>Processes that confirm accuracy, such as statute checks, reading rules and the evaluation harness, became the center of the project.<br>In future AI work I will set up the structure that verifies output accuracy first.</span></p></div>
+      </div>
+    </div></article>
+
   </div>
 </div></section>
 
@@ -380,13 +394,6 @@ One unfounded finding is worse than ten "cannot determine" results.</span></div>
 Failed tests and skipped steps are never hidden.</span></div></div>
     <div class="item"><h3><span class="ko">오독을 학습 루프로</span><span class="en">Misreads feed a learning loop</span></h3><p><span class="ko">판독 오류가 나면 사례집에 등재하고 규칙으로 승격한 뒤, 가능하면 코드 검증으로 승격합니다.<br>사례는 검증 트리거이지 판정 근거가 아닙니다.<br>근거가 없는 결정은 유보하고 대가 항목이 있는 ADR로 남깁니다.</span><span class="en">When a reading turns out wrong, it goes into a casebook, is promoted to a rule and, where possible, to a code check.<br>A case triggers verification; it is not evidence for a finding.<br>Decisions without enough evidence are deferred and recorded as ADRs that state their costs.</span></p></div>
     <div class="item"><h3><span class="ko">기록 자동화</span><span class="en">Automated record-keeping</span></h3><p><span class="ko">일일 작업 일지는 Claude Code 예약 작업이 맡습니다.<br>매일 아침 커밋과 산출물, 세션 기록을 수집해 노션 DB에 올립니다.<br>실명·사업장명·키는 어떤 기록에도 남기지 않습니다.</span><span class="en">A Claude Code scheduled task keeps the daily work log.<br>Every morning it gathers commits, outputs and session records and posts them to a Notion database.<br>No real names, site names or keys go into any record.</span></p></div>
-  </div>
-</div></section>
-
-<section id="lessons"><div class="wrap">
-  <div class="sec-head"><h2><span class="ko">느낀 점</span><span class="en">Takeaways</span></h2></div>
-  <div class="lessons">
-    <p><span class="ko">이번 프로젝트에서 가장 크게 느낀 것은 AI를 쓸 때 정확성을 높이는 데 많은 집중을 쏟아야 한다는 점입니다.<br>AI는 초안을 빠르게 내놓지만 조문을 잘못 인용하거나 영상에 없는 사고를 그럴듯하게 서술하기도 했습니다.<br>결과물을 그대로 믿을 수 없었기 때문에 기능을 만드는 시간보다 결과를 검증하는 장치를 만드는 시간이 더 길었습니다.<br>법령 대조, 판독 규칙, 평가 하네스처럼 정확성을 확인하는 과정이 프로젝트의 중심이 됐습니다.<br>앞으로도 AI를 활용하는 일에서는 출력의 정확성을 먼저 확인하는 구조부터 갖추겠습니다.</span><span class="en">What I felt most strongly in this project is that using AI takes a great deal of focus on improving accuracy.<br>AI produces drafts quickly, but it also cited the wrong statute and gave convincing descriptions of accidents that were not in the footage.<br>Because the output could not be trusted as it was, building the checks took longer than building the features.<br>Processes that confirm accuracy, such as statute checks, reading rules and the evaluation harness, became the center of the project.<br>In future AI work I will set up the structure that verifies output accuracy first.</span></p>
   </div>
 </div></section>
 
